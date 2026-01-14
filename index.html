@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>流浪漢模擬器</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🏚️ 流浪漢模擬器</h1>
+      <p class="subtitle">在街頭活下去。切到「芬太尼 MODE」會更混亂、更危險。</p>
+    </header>
+
+    <div class="game-area">
+      <div class="stats-panel">
+        <h2>狀態</h2>
+
+        <div class="stat-item">
+          <span class="stat-label">💰 金錢：</span>
+          <span id="money" class="stat-value">$0</span>
+        </div>
+
+        <div class="stat-item">
+          <span class="stat-label">🍔 飢餓：</span>
+          <div class="bar-container">
+            <div id="hunger-bar" class="stat-bar hunger-bar"></div>
+          </div>
+          <span id="hunger-value" class="stat-value">100%</span>
+        </div>
+
+        <div class="stat-item">
+          <span class="stat-label">❤️ 健康：</span>
+          <div class="bar-container">
+            <div id="health-bar" class="stat-bar health-bar"></div>
+          </div>
+          <span id="health-value" class="stat-value">100%</span>
+        </div>
+
+        <div class="stat-item">
+          <span class="stat-label">😊 心情：</span>
+          <div class="bar-container">
+            <div id="mood-bar" class="stat-bar mood-bar"></div>
+          </div>
+          <span id="mood-value" class="stat-value">50%</span>
+        </div>
+
+        <div class="stat-item">
+          <span class="stat-label">⚡ 行動：</span>
+          <span id="actions-left" class="stat-value">3/3</span>
+        </div>
+
+        <div class="stat-item">
+          <span class="stat-label">🧪 模式：</span>
+          <select id="mode-select" class="select">
+            <option value="normal">正常模式</option>
+            <option value="fentanyl">芬太尼 MODE（混亂）</option>
+          </select>
+        </div>
+
+        <div class="stat-item">
+          <span class="stat-label">📅 天數：</span>
+          <span id="day" class="stat-value">第 1 天</span>
+        </div>
+
+        <div class="mini-buttons">
+          <button id="reset-btn" class="mini-btn danger">🗑️ 重開</button>
+        </div>
+      </div>
+
+      <div class="event-panel">
+        <h2>今日事件</h2>
+        <div id="event-text" class="event-text">
+          歡迎來到街頭生活！你必須想辦法生存下去...
+        </div>
+        <div id="choices" class="choices"></div>
+      </div>
+
+      <div class="log-panel">
+        <h2>日誌</h2>
+        <div id="log" class="log-content">
+          <div class="log-entry">遊戲開始！</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-panel">
+      <h2>行動</h2>
+      <div class="action-buttons">
+        <button id="beg-btn" class="action-btn">🙏 乞討</button>
+        <button id="work-btn" class="action-btn">💼 找臨時工作</button>
+        <button id="eat-btn" class="action-btn">🍕 買食物</button>
+        <button id="sleep-btn" class="action-btn">😴 睡覺</button>
+        <button id="scavenge-btn" class="action-btn">🔍 撿垃圾</button>
+
+        <button id="sell-mag-btn" class="action-btn">📰 賣雜誌</button>
+        <button id="sell-flower-btn" class="action-btn">🌸 賣玉蘭花</button>
+        <button id="subsidy-btn" class="action-btn">🧾 申請補助</button>
+
+        <button id="pigeon-btn" class="action-btn">🕊️ 發射鴿子</button>
+        <button id="choco-btn" class="action-btn">🍫 大便巧克力</button>
+
+        <button id="next-day-btn" class="action-btn primary">⏭️ 下一天</button>
+      </div>
+
+      <p class="hint">
+        提示：芬太尼 MODE 事件更兇、飢餓掉更快；「巧克力惡搞」風險非常高。
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
